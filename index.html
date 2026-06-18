@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payal Jewellers — Fine Gold Jewellery, Est. 1985</title>
+  <meta name="description" content="Payal Jewellers — handcrafted 22k gold Kada, Mangalsutra, Chains, Rings, Earrings and Necklaces. Three generations of goldsmith craft." />
+
+  <!-- Google Fonts: Cormorant Garamond (display) + Poppins (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon (gold monogram, inline SVG data URI) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230c0a09'/%3E%3Ctext x='50' y='62' font-size='44' font-family='Georgia,serif' fill='%23d4af37' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ================= PRELOADER ================= -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <svg class="preloader__ring" viewBox="0 0 120 120" fill="none">
+        <circle cx="60" cy="60" r="52" stroke="#3a322a" stroke-width="1.5"/>
+        <circle class="preloader__ring-draw" cx="60" cy="60" r="52" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="preloader__mark">PJ</span>
+      <p class="preloader__label">Payal Jewellers</p>
+    </div>
+  </div>
+
+  <!-- ================= SVG DEFS SPRITE (shared gradients, referenced across the page) ================= -->
+  <svg class="defs-sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FBF1D2"/>
+        <stop offset="45%" stop-color="#D4AF37"/>
+        <stop offset="100%" stop-color="#8C6A2F"/>
+      </linearGradient>
+      <linearGradient id="goldGradSoft" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FFFBEF" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.55"/>
+      </linearGradient>
+      <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+        <stop offset="0%" stop-color="#D4AF37"/>
+        <stop offset="55%" stop-color="#E8853A"/>
+        <stop offset="100%" stop-color="#FBF1D2"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="#home" class="navbar__logo">
+        <span class="navbar__logo-mark">PJ</span>
+        <span class="navbar__logo-text">Payal<span class="navbar__logo-sub">Jewellers</span></span>
+      </a>
+
+      <nav class="navbar__nav" id="navMenu">
+
+  <button class="navbar__close" id="navClose" aria-label="Close menu">
+    ✕
+  </button>
+
+  <a href="#home" class="navbar__link active">Home</a>
+  <a href="#collections" class="navbar__link">Collections</a>
+  <a href="#trending" class="navbar__link">Trending</a>
+  <a href="#about" class="navbar__link">About</a>
+  <a href="#testimonials" class="navbar__link">Testimonials</a>
+  <a href="#contact" class="navbar__link">Contact</a>
+</nav>
+
+      <div class="navbar__actions">
+        <a href="#contact" class="btn btn--outline btn--sm">Visit Showroom</a>
+        <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="hero__bg">
+      <img class="hero__bg-img" src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=700&q=85" alt="" aria-hidden="true" loading="eager">
+      <div class="hero__glow hero__glow--1"></div>
+      <div class="hero__glow hero__glow--2"></div>
+      <div class="hero__particles" id="heroParticles"></div>
+    </div>
+
+    <div class="hero__container">
+      <div class="hero__content">
+        <p class="eyebrow reveal-fade" style="--d:0.05s">Fine Jewellery &middot; Est. 1985 &middot; Dhar, M.P.</p>
+        <h1 class="hero__title">
+          <span class="reveal-line"><span class="reveal-inner" style="--d:0.15s">Gold, Drawn</span></span>
+          <span class="reveal-line"><span class="reveal-inner reveal-inner--gold" style="--d:0.3s">by Hand.</span></span>
+        </h1>
+        <p class="hero__sub reveal-fade" style="--d:0.5s">
+          From the kada on your wrist to the mangalsutra close to your heart —
+          every piece at Payal Jewellers is hand-finished in 22k gold,
+          made to be worn for a lifetime and passed on for another.
+        </p>
+        <div class="hero__ctas reveal-fade" style="--d:0.65s">
+          <a href="#collections" class="btn btn--gold">
+            <span>Explore Collection</span>
+          </a>
+          <a href="#about" class="btn btn--ghost">Our Story</a>
+        </div>
+
+        <div class="hero__stats reveal-fade" style="--d:0.8s">
+          <div class="hero__stat">
+            <span class="hero__stat-num">40+</span>
+            <span class="hero__stat-label">Years of Craft</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-num">22K</span>
+            <span class="hero__stat-label">Hallmarked Gold</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-num">10k+</span>
+            <span class="hero__stat-label">Happy Families</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual reveal-fade" style="--d:0.4s">
+        <svg class="hero__necklace" viewBox="0 0 400 400" aria-label="Illustration of a gold statement necklace">
+          <circle cx="200" cy="190" r="185" fill="url(#glowGrad)"/>
+          <!-- outer chain -->
+          <path d="M55,85 C 55,225 145,310 200,310 C 255,310 345,225 345,85" fill="none" stroke="url(#goldGrad)" stroke-width="5"/>
+          <!-- inner chain -->
+          <path d="M82,90 C 82,210 150,278 200,278 C 250,278 318,210 318,90" fill="none" stroke="url(#goldGradSoft)" stroke-width="1.5" opacity="0.6"/>
+          <!-- chain links -->
+          <g fill="url(#goldGrad)">
+            <circle cx="55" cy="85" r="4"/><circle cx="62" cy="120" r="3.5"/><circle cx="70" cy="155" r="3.5"/>
+            <circle cx="345" cy="85" r="4"/><circle cx="338" cy="120" r="3.5"/><circle cx="330" cy="155" r="3.5"/>
+          </g>
+          <!-- side pendants -->
+          <g>
+            <circle cx="92" cy="195" r="8" fill="url(#goldGrad)"/>
+            <path d="M92,203 L92,222" stroke="url(#goldGrad)" stroke-width="2"/>
+            <polygon points="82,222 102,222 92,248" fill="url(#goldGradSoft)" stroke="url(#goldGrad)" stroke-width="1.5"/>
+          </g>
+          <g>
+            <circle cx="308" cy="195" r="8" fill="url(#goldGrad)"/>
+            <path d="M308,203 L308,222" stroke="url(#goldGrad)" stroke-width="2"/>
+            <polygon points="298,222 318,222 308,248" fill="url(#goldGradSoft)" stroke="url(#goldGrad)" stroke-width="1.5"/>
+          </g>
+          <!-- center pendant (larger) -->
+          <g>
+            <circle cx="200" cy="240" r="14" fill="url(#goldGrad)"/>
+            <circle cx="200" cy="240" r="6" fill="#1a1410"/>
+            <path d="M200,254 L200,278" stroke="url(#goldGrad)" stroke-width="3"/>
+            <polygon points="184,278 216,278 200,318" fill="url(#goldGradSoft)" stroke="url(#goldGrad)" stroke-width="2"/>
+            <polygon points="200,288 200,308 188,296" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.7"/>
+          </g>
+          <!-- mid pendants between center and sides -->
+          <g>
+            <circle cx="146" cy="222" r="6" fill="url(#goldGrad)"/>
+            <path d="M146,228 L146,244" stroke="url(#goldGrad)" stroke-width="1.5"/>
+            <polygon points="139,244 153,244 146,260" fill="url(#goldGradSoft)" stroke="url(#goldGrad)" stroke-width="1"/>
+          </g>
+          <g>
+            <circle cx="254" cy="222" r="6" fill="url(#goldGrad)"/>
+            <path d="M254,228 L254,244" stroke="url(#goldGrad)" stroke-width="1.5"/>
+            <polygon points="247,244 261,244 254,260" fill="url(#goldGradSoft)" stroke="url(#goldGrad)" stroke-width="1"/>
+          </g>
+          <!-- sparkle stars -->
+          <path class="sparkle-mark" style="--sd:0s" d="M312,55 l4,12 12,4 -12,4 -4,12 -4,-12 -12,-4 12,-4 Z" fill="url(#goldGradSoft)"/>
+          <path class="sparkle-mark" style="--sd:1.1s" d="M70,40 l3,9 9,3 -9,3 -3,9 -3,-9 -9,-3 9,-3 Z" fill="url(#goldGradSoft)"/>
+          <path class="sparkle-mark" style="--sd:2.2s" d="M340,170 l3,9 9,3 -9,3 -3,9 -3,-9 -9,-3 9,-3 Z" fill="url(#goldGradSoft)"/>
+        </svg>
+      </div>
+    </div>
+
+    <a href="#trending" class="hero__scroll" aria-label="Scroll to explore">
+      <span class="hero__scroll-line"></span>
+      <span class="hero__scroll-text">Scroll to Explore</span>
+    </a>
+  </section>
+
+  <!-- ================= GOLD THREAD DIVIDER ================= -->
+  <div class="thread" aria-hidden="true">
+    <svg class="thread__svg" viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path class="thread__path" d="M0,40 C 150,10 300,70 450,40 C 600,10 750,70 900,40 C 1000,20 1100,60 1200,40"/>
+    </svg>
+  </div>
+
+  <!-- ================= TRENDING NOW CAROUSEL ================= -->
+  <section class="trending" id="trending">
+    <div class="section-head reveal">
+      <p class="eyebrow">Curated Selection</p>
+      <h2 class="section-title">Trending Now</h2>
+      <p class="section-desc">This season's most requested pieces — fresh from the workbench to the showroom floor.</p>
+    </div>
+
+    <div class="carousel" id="trendingCarousel">
+      <button class="carousel__arrow carousel__arrow--prev" id="trendPrev" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <div class="carousel__viewport">
+        <div class="carousel__track" id="trendingTrack">
+
+          <!-- Slide 1: Kada -->
+          <article class="jewel-card jewel-card--carousel">
+            <div class="jewel-card__media velvet velvet--maroon">
+          <span class="jewel-card__badge">Trending</span>
+          <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=700&q=85" alt="Royal Antique Kada — 22K Gold" loading="lazy" draggable="false">
+        </div>
+            <div class="jewel-card__body">
+              <p class="jewel-card__cat">Kada &middot; 22K Gold &middot; Temple Finish</p>
+              <h3 class="jewel-card__name">Royal Antique Kada</h3>
+              <p class="jewel-card__price">&#8377;68,500</p>
+            </div>
+          </article>
+
+          <!-- Slide 2: Mangalsutra -->
+          <article class="jewel-card jewel-card--carousel">
+            <div class="jewel-card__media velvet velvet--emerald">
+          <span class="jewel-card__badge">Bridal Edit</span>
+          <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=700&q=85" alt="Temple Mangalsutra — Black Beads" loading="lazy" draggable="false">
+        </div>
+            <div class="jewel-card__body">
+              <p class="jewel-card__cat">Mangalsutra &middot; 22K Gold &middot; Black Beads</p>
+              <h3 class="jewel-card__name">Temple Mangalsutra Set</h3>
+              <p class="jewel-card__price">&#8377;1,24,000</p>
+            </div>
+          </article>
+
+          <!-- Slide 3: Chain -->
+          <article class="jewel-card jewel-card--carousel">
+            <div class="jewel-card__media velvet velvet--sapphire">
+          <span class="jewel-card__badge">New</span>
+          <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=700&q=85" alt="Classic Gold Rope Chain" loading="lazy" draggable="false">
+        </div>
+            <div class="jewel-card__body">
+              <p class="jewel-card__cat">Chain &middot; 22K Gold &middot; 20 inch</p>
+              <h3 class="jewel-card__name">Classic Rope Chain</h3>
+              <p class="jewel-card__price">&#8377;52,000</p>
+            </div>
+          </article>
+
+          <!-- Slide 4: Earrings -->
+          <article class="jewel-card jewel-card--carousel">
+            <div class="jewel-card__media velvet velvet--plum">
+          <span class="jewel-card__badge">Festive</span>
+          <img src="https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?auto=format&fit=crop&w=700&q=85" alt="Polki Jhumka Earrings" loading="lazy" draggable="false">
+        </div>
+            <div class="jewel-card__body">
+              <p class="jewel-card__cat">Earrings &middot; 22K Gold &middot; Kundan Work</p>
+              <h3 class="jewel-card__name">Polki Jhumka Earrings</h3>
+              <p class="jewel-card__price">&#8377;76,800</p>
+            </div>
+          </article>
+
+          <!-- Slide 5: Necklace -->
+          <article class="jewel-card jewel-card--carousel">
+            <div class="jewel-card__media velvet velvet--ivory">
+          <span class="jewel-card__badge">Statement</span>
+          <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=85" alt="Layered Bridal Choker" loading="lazy" draggable="false">
+        </div>
+            <div class="jewel-card__body">
+              <p class="jewel-card__cat">Necklace &middot; 22K Gold &middot; Bridal</p>
+              <h3 class="jewel-card__name">Layered Bridal Choker</h3>
+              <p class="jewel-card__price">&#8377;1,85,000</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <button class="carousel__arrow carousel__arrow--next" id="trendNext" aria-label="Next slide">
+        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div class="carousel__dots" id="trendingDots" role="tablist" aria-label="Carousel slides"></div>
+  </section>
+
+  <!-- ================= GOLD THREAD DIVIDER ================= -->
+  <div class="thread thread--alt" aria-hidden="true">
+    <svg class="thread__svg" viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path class="thread__path" d="M0,40 C 100,70 250,10 400,40 C 550,70 700,10 850,40 C 1000,70 1100,20 1200,40"/>
+    </svg>
+  </div>
+
+  <!-- ================= CATEGORY SHOWCASE ================= -->
+  <section class="categories" id="collections">
+    <div class="section-head reveal">
+      <p class="eyebrow">Our Craft</p>
+      <h2 class="section-title">Shop by Category</h2>
+      <p class="section-desc">Six signatures, one standard of gold — explore the pieces that define everyday elegance and once-in-a-lifetime occasions.</p>
+    </div>
+
+    <div class="categories__grid">
+
+      <a href="#" class="cat-card reveal" style="--d:0s">
+        <div class="cat-card__media velvet velvet--maroon">
+          <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=700&q=85" alt="Gold Kada collection" loading="lazy" draggable="false">
+        </div>
+        <div class="cat-card__body">
+          <h3>Kada</h3>
+          <p>Bold, engraved bangles for everyday royalty.</p>
+          <span class="cat-card__link">View Collection <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#" class="cat-card reveal" style="--d:0.08s">
+        <div class="cat-card__media velvet velvet--emerald">
+          <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=700&q=85" alt="Mangalsutra collection" loading="lazy" draggable="false">
+        </div>
+        <div class="cat-card__body">
+          <h3>Mangalsutra</h3>
+          <p>Sacred designs balancing tradition and trend.</p>
+          <span class="cat-card__link">View Collection <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#" class="cat-card reveal" style="--d:0.16s">
+        <div class="cat-card__media velvet velvet--sapphire">
+          <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=700&q=85" alt="Gold Chain collection" loading="lazy" draggable="false">
+        </div>
+        <div class="cat-card__body">
+          <h3>Chains</h3>
+          <p>Curb, rope &amp; box chains in solid 22k gold.</p>
+          <span class="cat-card__link">View Collection <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#" class="cat-card reveal" style="--d:0.24s">
+        <div class="cat-card__media velvet velvet--plum">
+          <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=700&q=85" alt="Gold Ring collection" loading="lazy" draggable="false">
+        </div>
+        <div class="cat-card__body">
+          <h3>Rings</h3>
+          <p>From everyday bands to cocktail statements.</p>
+          <span class="cat-card__link">View Collection <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#" class="cat-card reveal" style="--d:0.32s">
+        <div class="cat-card__media velvet velvet--ivory">
+          <img src="https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?auto=format&fit=crop&w=700&q=85" alt="Gold Earrings collection" loading="lazy" draggable="false">
+        </div>
+        <div class="cat-card__body">
+          <h3>Earrings</h3>
+          <p>Jhumkas, studs &amp; hoops for every occasion.</p>
+          <span class="cat-card__link">View Collection <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#" class="cat-card reveal" style="--d:0.4s">
+        <div class="cat-card__media velvet velvet--charcoal">
+          <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=85" alt="Gold Necklace collection" loading="lazy" draggable="false">
+        </div>
+        <div class="cat-card__body">
+          <h3>Necklaces</h3>
+          <p>Chokers &amp; sets for weddings and beyond.</p>
+          <span class="cat-card__link">View Collection <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ================= FEATURED / BEST SELLERS ================= -->
+  <section class="featured">
+    <div class="section-head reveal">
+      <p class="eyebrow">Best Sellers</p>
+      <h2 class="section-title">Featured Pieces</h2>
+      <p class="section-desc">Hand-picked favourites — loved, gifted, and worn on repeat by our family of customers.</p>
+    </div>
+
+    <div class="featured__grid">
+
+      <article class="jewel-card reveal" style="--d:0s">
+        <div class="jewel-card__media velvet velvet--maroon">
+          <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=700&q=85" alt="Royal Antique Kada — 22K Gold" loading="lazy" draggable="false">
+          <div class="jewel-card__overlay">
+            <button class="icon-btn" aria-label="Quick view">
+              <svg viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </button>
+            <button class="icon-btn" aria-label="Add to wishlist">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.6 8.4 2.6 5 6 5c2 0 3.6 1.1 4.5 2.6.2.3.6.3.8 0C12.4 6.1 14 5 16 5c3.4 0 5.4 3.4 4 6.7C19.5 16.4 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="jewel-card__body">
+          <p class="jewel-card__cat">Kada &middot; 22K Gold</p>
+          <h3 class="jewel-card__name">Royal Antique Kada</h3>
+          <p class="jewel-card__price">&#8377;68,500</p>
+        </div>
+      </article>
+
+      <article class="jewel-card reveal" style="--d:0.08s">
+        <div class="jewel-card__media velvet velvet--emerald">
+          <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=700&q=85" alt="Solitaire Cocktail Ring — Gold" loading="lazy" draggable="false">
+          <div class="jewel-card__overlay">
+            <button class="icon-btn" aria-label="Quick view">
+              <svg viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </button>
+            <button class="icon-btn" aria-label="Add to wishlist">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.6 8.4 2.6 5 6 5c2 0 3.6 1.1 4.5 2.6.2.3.6.3.8 0C12.4 6.1 14 5 16 5c3.4 0 5.4 3.4 4 6.7C19.5 16.4 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="jewel-card__body">
+          <p class="jewel-card__cat">Mangalsutra &middot; 22K Gold</p>
+          <h3 class="jewel-card__name">Temple Mangalsutra Set</h3>
+          <p class="jewel-card__price">&#8377;1,24,000</p>
+        </div>
+      </article>
+
+      <article class="jewel-card reveal" style="--d:0.16s">
+        <div class="jewel-card__media velvet velvet--sapphire">
+          <svg viewBox="0 0 200 200" class="jewel-illus" aria-label="Classic Rope Chain">
+            <circle cx="100" cy="100" r="85" fill="url(#glowGrad)"/>
+            <path d="M15,100 Q 50,55 85,100 T 155,100 T 200,100" fill="none" stroke="url(#goldGradSoft)" stroke-width="7" stroke-linecap="round" opacity="0.6"/>
+            <path d="M15,100 Q 50,145 85,100 T 155,100 T 200,100" fill="none" stroke="url(#goldGrad)" stroke-width="11" stroke-linecap="round"/>
+          </svg>
+          <div class="jewel-card__overlay">
+            <button class="icon-btn" aria-label="Quick view">
+              <svg viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </button>
+            <button class="icon-btn" aria-label="Add to wishlist">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.6 8.4 2.6 5 6 5c2 0 3.6 1.1 4.5 2.6.2.3.6.3.8 0C12.4 6.1 14 5 16 5c3.4 0 5.4 3.4 4 6.7C19.5 16.4 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="jewel-card__body">
+          <p class="jewel-card__cat">Chain &middot; 22K Gold</p>
+          <h3 class="jewel-card__name">Classic Rope Chain</h3>
+          <p class="jewel-card__price">&#8377;52,000</p>
+        </div>
+      </article>
+
+      <article class="jewel-card reveal" style="--d:0.24s">
+        <div class="jewel-card__media velvet velvet--plum">
+          <svg viewBox="0 0 200 200" class="jewel-illus" aria-label="Polki Jhumka Earrings">
+            <circle cx="100" cy="100" r="85" fill="url(#glowGrad)"/>
+            <path d="M82,55 a18,18 0 1,0 36,0" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+            <path d="M82,58 a18,14 0 0,0 36,0 v8 a18,14 0 0,1 -36,0 Z" fill="url(#goldGrad)" opacity="0.9"/>
+            <line x1="100" y1="80" x2="100" y2="100" stroke="url(#goldGrad)" stroke-width="2"/>
+            <circle cx="100" cy="105" r="6" fill="url(#goldGrad)"/>
+            <g stroke="url(#goldGrad)" stroke-width="2">
+              <line x1="88" y1="108" x2="82" y2="135"/>
+              <line x1="100" y1="112" x2="100" y2="140"/>
+              <line x1="112" y1="108" x2="118" y2="135"/>
+            </g>
+            <g fill="url(#goldGrad)">
+              <circle cx="82" cy="139" r="3.5"/>
+              <circle cx="100" cy="144" r="3.5"/>
+              <circle cx="118" cy="139" r="3.5"/>
+            </g>
+          </svg>
+          <div class="jewel-card__overlay">
+            <button class="icon-btn" aria-label="Quick view">
+              <svg viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </button>
+            <button class="icon-btn" aria-label="Add to wishlist">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.6 8.4 2.6 5 6 5c2 0 3.6 1.1 4.5 2.6.2.3.6.3.8 0C12.4 6.1 14 5 16 5c3.4 0 5.4 3.4 4 6.7C19.5 16.4 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="jewel-card__body">
+          <p class="jewel-card__cat">Earrings &middot; 22K Gold</p>
+          <h3 class="jewel-card__name">Polki Jhumka Earrings</h3>
+          <p class="jewel-card__price">&#8377;76,800</p>
+        </div>
+      </article>
+
+      <article class="jewel-card reveal" style="--d:0.32s">
+        <div class="jewel-card__media velvet velvet--ivory">
+          <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=700&q=85" alt="Solitaire Cocktail Ring — Gold" loading="lazy" draggable="false">
+          <div class="jewel-card__overlay">
+            <button class="icon-btn" aria-label="Quick view">
+              <svg viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </button>
+            <button class="icon-btn" aria-label="Add to wishlist">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.6 8.4 2.6 5 6 5c2 0 3.6 1.1 4.5 2.6.2.3.6.3.8 0C12.4 6.1 14 5 16 5c3.4 0 5.4 3.4 4 6.7C19.5 16.4 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </button>
+          
+        </div>
+        </div>
+        <div class="jewel-card__body">
+          <p class="jewel-card__cat">Ring &middot; 22K Gold</p>
+          <h3 class="jewel-card__name">Solitaire Cocktail Ring</h3>
+          <p class="jewel-card__price">&#8377;38,200</p>
+        </div>
+      </article>
+
+      <article class="jewel-card reveal" style="--d:0.4s">
+        <div class="jewel-card__media velvet velvet--charcoal">
+          <svg viewBox="0 0 200 200" class="jewel-illus" aria-label="Layered Bridal Choker">
+            <circle cx="100" cy="100" r="85" fill="url(#glowGrad)"/>
+            <path d="M22,55 C 22,120 70,148 100,148 C 130,148 178,120 178,55" fill="none" stroke="url(#goldGrad)" stroke-width="4"/>
+            <path d="M40,60 C 40,110 75,130 100,130 C 125,130 160,110 160,60" fill="none" stroke="url(#goldGradSoft)" stroke-width="2" opacity="0.6"/>
+            <g>
+              <circle cx="60" cy="118" r="6" fill="url(#goldGrad)"/>
+              <path d="M60,124 L60,140" stroke="url(#goldGrad)" stroke-width="2"/>
+              <polygon points="53,140 67,140 60,158" fill="url(#goldGradSoft)" stroke="url(#goldGrad)" stroke-width="1.5"/>
+            </g>
+            <g>
+              <circle cx="100" cy="138" r="9" fill="url(#goldGrad)"/>
+              <circle cx="100" cy="138" r="4" fill="#1a1410"/>
+              <path d="M100,147 L100,165" stroke="url(#goldGrad)" stroke-width="2.5"/>
+              <polygon points="90,165 110,165 100,184" fill="url(#goldGradSoft)" stroke="url(#goldGrad)" stroke-width="1.5"/>
+            </g>
+            <g>
+              <circle cx="140" cy="118" r="6" fill="url(#goldGrad)"/>
+              <path d="M140,124 L140,140" stroke="url(#goldGrad)" stroke-width="2"/>
+              <polygon points="133,140 147,140 140,158" fill="url(#goldGradSoft)" stroke="url(#goldGrad)" stroke-width="1.5"/>
+            </g>
+          </svg>
+          <div class="jewel-card__overlay">
+            <button class="icon-btn" aria-label="Quick view">
+              <svg viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </button>
+            <button class="icon-btn" aria-label="Add to wishlist">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.6 8.4 2.6 5 6 5c2 0 3.6 1.1 4.5 2.6.2.3.6.3.8 0C12.4 6.1 14 5 16 5c3.4 0 5.4 3.4 4 6.7C19.5 16.4 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="jewel-card__body">
+          <p class="jewel-card__cat">Necklace &middot; 22K Gold</p>
+          <h3 class="jewel-card__name">Layered Bridal Choker</h3>
+          <p class="jewel-card__price">&#8377;1,85,000</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="featured__more reveal">
+      <a href="#" class="btn btn--ghost">View All Products</a>
+    </div>
+  </section>
+
+  <!-- ================= GOLD THREAD DIVIDER ================= -->
+  <div class="thread" aria-hidden="true">
+    <svg class="thread__svg" viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path class="thread__path" d="M0,40 C 150,10 300,70 450,40 C 600,10 750,70 900,40 C 1000,20 1100,60 1200,40"/>
+    </svg>
+  </div>
+
+  <!-- ================= BRAND STORY / ABOUT ================= -->
+  <section class="story" id="about">
+    <div class="story__visual reveal">
+      <div class="story__frame">
+        <img src="https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=700&q=85" alt="Jewellery flat lay on dark velvet — Payal Jewellers atelier" loading="lazy" draggable="false">
+      </div>
+    </div>
+
+    <div class="story__content">
+      <p class="eyebrow reveal">Since 1985 &middot; Three Generations</p>
+      <h2 class="section-title reveal">The Atelier</h2>
+      <p class="story__text reveal">
+        Payal Jewellers began as a single workbench in the lanes of Dhar, where our founder
+        hand-shaped wedding bangles by lamplight. Four decades on, that same workbench still
+        sits at the heart of our store — every kada, chain and mangalsutra we sell is
+        designed, cast and finished by goldsmiths who trained under that very bench.
+      </p>
+      <p class="story__text reveal">
+        We work only in BIS hallmarked 22k gold, weigh every piece in front of you, and
+        keep no design locked away — if you can describe it, we can make it. This is
+        jewellery built the old way, for the families who'll wear it the longest.
+      </p>
+      <a href="#contact" class="btn btn--ghost reveal">Visit Our Showroom</a>
+    </div>
+  </section>
+
+  <!-- ================= WHY CHOOSE US ================= -->
+  <section class="features">
+    <div class="section-head reveal">
+      <p class="eyebrow">Our Promise</p>
+      <h2 class="section-title">Why Families Choose Us</h2>
+    </div>
+
+    <div class="features__grid">
+
+      <div class="feature-card reveal" style="--d:0s">
+        <div class="feature-card__icon">
+          <svg viewBox="0 0 48 48"><path d="M24 4 8 10v10c0 12 7 19 16 24 9-5 16-12 16-24V10L24 4Z" fill="none" stroke="url(#goldGrad)" stroke-width="2"/><path d="M16 23l6 6 11-13" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Certified Hallmark Gold</h3>
+        <p>Every piece is BIS hallmarked and tested for purity in front of you — so what you wear is exactly what you're promised.</p>
+      </div>
+
+      <div class="feature-card reveal" style="--d:0.08s">
+        <div class="feature-card__icon">
+          <svg viewBox="0 0 48 48"><path d="M6 30 28 8l8 8-22 22H6v-8Z" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-linejoin="round"/><path d="M24 12l8 8" stroke="url(#goldGrad)" stroke-width="2"/><circle cx="36" cy="12" r="3" fill="none" stroke="url(#goldGrad)" stroke-width="2"/></svg>
+        </div>
+        <h3>Bespoke Design Studio</h3>
+        <p>Bring a sketch, a photo or just an idea — our goldsmiths translate it into a piece made only for you.</p>
+      </div>
+
+      <div class="feature-card reveal" style="--d:0.16s">
+        <div class="feature-card__icon">
+          <svg viewBox="0 0 48 48"><path d="M8 18a16 16 0 0 1 27-11l3-3v9h-9l3-3a12 12 0 0 0-20 8" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 30a16 16 0 0 1-27 11l-3 3v-9h9l-3 3a12 12 0 0 0 20-8" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Lifetime Exchange Promise</h3>
+        <p>Trade in your gold at the prevailing rate, any time, for as long as you own it — no questions asked.</p>
+      </div>
+
+      <div class="feature-card reveal" style="--d:0.24s">
+        <div class="feature-card__icon">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="url(#goldGrad)" stroke-width="2"/><path d="M24 14v10l7 5" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Trusted Since 1985</h3>
+        <p>Three generations of goldsmiths, one family business — trusted for weddings, milestones and everyday gold.</p>
+      </div>
+
+    </div>
+  </section>
+  
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-head reveal">
+      <p class="eyebrow">Client Stories</p>
+      <h2 class="section-title">Words From Our Family</h2>
+    </div>
+
+    <div class="testi-carousel" id="testiCarousel">
+      <div class="testi-track" id="testiTrack">
+
+        <figure class="testi-card">
+          <div class="testi-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>
+            "We bought my daughter's entire wedding set here — the mangalsutra design they
+            customised for us was exactly what she'd dreamed of. The hallmark certificate
+            and billing were completely transparent."
+          </blockquote>
+          <figcaption>
+            <span class="testi-card__avatar">R&nbsp;S</span>
+            <span class="testi-card__meta"><strong>Rekha Sharma</strong><br>Dhar, M.P.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="testi-card">
+          <div class="testi-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>
+            "I asked for a kada based on a photo from my grandmother's wedding album.
+            Three generations later, Payal Jewellers recreated it almost exactly —
+            down to the engraving pattern. Truly old-school craftsmanship."
+          </blockquote>
+          <figcaption>
+            <span class="testi-card__avatar">A&nbsp;P</span>
+            <span class="testi-card__meta"><strong>Anand Patel</strong><br>Indore, M.P.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="testi-card">
+          <div class="testi-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>
+            "The exchange policy made all the difference — we traded in old chains
+            towards a new necklace set without any hassle. Honest weighing, fair
+            making charges, and beautiful finishing."
+          </blockquote>
+          <figcaption>
+            <span class="testi-card__avatar">M&nbsp;J</span>
+            <span class="testi-card__meta"><strong>Meena Joshi</strong><br>Dhar, M.P.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="testi-card">
+          <div class="testi-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>
+            "Bought a rope chain for my son's first salary gift. The team helped us
+            pick a weight within budget without ever feeling pushy. This is the
+            kind of jeweller you keep coming back to."
+          </blockquote>
+          <figcaption>
+            <span class="testi-card__avatar">S&nbsp;V</span>
+            <span class="testi-card__meta"><strong>Sunil Verma</strong><br>Mandu, M.P.</span>
+          </figcaption>
+        </figure>
+
+      </div>
+      <div class="testi-dots" id="testiDots" role="tablist" aria-label="Testimonial slides"></div>
+    </div>
+  </section>
+
+  <!-- ================= GOLD THREAD DIVIDER ================= -->
+  <div class="thread thread--alt" aria-hidden="true">
+    <svg class="thread__svg" viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path class="thread__path" d="M0,40 C 100,70 250,10 400,40 C 550,70 700,10 850,40 C 1000,70 1100,20 1200,40"/>
+    </svg>
+  </div>
+
+  <!-- ================= NEWSLETTER / CONTACT ================= -->
+  <section class="contact" id="contact">
+    <div class="contact__inner">
+
+      <div class="contact__info reveal">
+        <p class="eyebrow">Visit Us</p>
+        <h2 class="section-title">Step Into the Atelier</h2>
+        <p class="contact__lead">
+          Come see, weigh and try every piece for yourself — our team is happiest
+          when you walk out wearing something you love.
+        </p>
+
+        <ul class="contact__details">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7-5.7-7-11a7 7 0 1 1 14 0c0 5.3-7 11-7 11Z" fill="none" stroke="url(#goldGrad)" stroke-width="1.6"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="url(#goldGrad)" stroke-width="1.6"/></svg>
+            <span>14 Sarafa Bazaar, Near Clock Tower, Dhar, Madhya Pradesh 454001</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2.4Z" fill="none" stroke="url(#goldGrad)" stroke-width="1.6"/></svg>
+            <span>+91 98765 43210</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4V4Z" fill="none" stroke="url(#goldGrad)" stroke-width="1.6"/><path d="m4 6 8 7 8-7" fill="none" stroke="url(#goldGrad)" stroke-width="1.6"/></svg>
+            <span>hello@payaljewellers.example</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="url(#goldGrad)" stroke-width="1.6"/><path d="M12 7v5l3 3" fill="none" stroke="url(#goldGrad)" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <span>Open Daily &middot; 10:30 AM &ndash; 8:30 PM</span>
+          </li>
+        </ul>
+
+        <div class="contact__map">
+          <iframe
+            title="Payal Jewellers location map"
+            src="https://www.google.com/maps?q=Sarafa+Bazaar+Dhar+Madhya+Pradesh&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="contact__newsletter reveal">
+        <p class="eyebrow">Stay in the Light</p>
+        <h3>New Collections, First Look</h3>
+        <p>
+          Subscribe for early previews of new arrivals, festive collections and
+          private showroom events — straight to your inbox.
+        </p>
+        <form class="newsletter-form" id="newsletterForm">
+          <label for="newsletterEmail" class="sr-only">Email address</label>
+          <input type="email" id="newsletterEmail" name="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn--gold"><span>Subscribe</span></button>
+        </form>
+        <p class="newsletter-form__msg" id="formMsg" role="status" aria-live="polite"></p>
+
+        <div class="contact__social">
+          <a href="#" aria-label="Instagram" class="social-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="social-icon">
+            <svg viewBox="0 0 24 24"><path d="M15 8h2V5h-2a4 4 0 0 0-4 4v2H9v3h2v6h3v-6h2.2l.8-3H14V9a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" aria-label="WhatsApp" class="social-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-3.2-6.4M20 12 21 21l-4.5-1.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" aria-label="Pinterest" class="social-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 17c1-3 1.5-5 2-7m1.5 2c2 1 4-.5 4-2.7C16.5 7 14.5 6 12.5 6 10 6 8 7.7 8 10c0 1.3.6 2.2 1.3 2.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="#home" class="navbar__logo">
+          <span class="navbar__logo-mark">PJ</span>
+          <span class="navbar__logo-text">Payal<span class="navbar__logo-sub">Jewellers</span></span>
+        </a>
+        <p>Handcrafted 22k gold jewellery from Dhar, Madhya Pradesh — trusted since 1985.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Explore</h4>
+        <a href="#home">Home</a>
+        <a href="#collections">Collections</a>
+        <a href="#trending">Trending</a>
+        <a href="#about">About</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Categories</h4>
+        <a href="#collections">Kada</a>
+        <a href="#collections">Mangalsutra</a>
+        <a href="#collections">Chains</a>
+        <a href="#collections">Rings &amp; Earrings</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Get in Touch</h4>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Visit Showroom</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; <span id="year"></span> Payal Jewellers. All rights reserved.</p>
+      <p>Designed as a digital atelier for fine gold jewellery.</p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
